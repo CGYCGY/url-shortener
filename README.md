@@ -2,16 +2,6 @@
 
 Self-hosted URL shortener for `s.gylab.cc`. Single-operator: create, share, gate, and track short links.
 
-Architecture and feature decisions live in [`docs/`](./docs/):
-- `01-project-overview.md` — goals and non-goals
-- `02-tech-stack.md` — Next.js + Convex + WorkOS AuthKit, with the rationale
-- `03-data-model.md` — `links` + `clicks` tables
-- `04-feature-list.md` — Must/Should/Won't matrix
-- `05-system-architecture.md` — hot path, auth flow, webhook flow
-- `06-component-architecture.md` — pages, components, routing
-- `07-ui-flows.md` — interaction details (create / unlock / disable / etc.)
-- `08-roadmap.md` — phased delivery plan
-
 ## Stack
 
 - **App:** Next.js 16 (App Router) on Node, React 19, TypeScript strict + `noUncheckedIndexedAccess`
@@ -166,7 +156,7 @@ In the WorkOS dashboard, point the user-events webhook at the Convex HTTP endpoi
 
 ## Testing
 
-Unit tests live next to source as `*.test.ts`. End-to-end Playwright tests run against a dev Convex deployment and require a real WorkOS user (or a test-only auth shim — see `docs/08-roadmap.md` Phase 7).
+Unit tests live next to source as `*.test.ts`. End-to-end Playwright tests run against a dev Convex deployment and require a real WorkOS user (or a test-only auth shim).
 
 ```bash
 bun run test
